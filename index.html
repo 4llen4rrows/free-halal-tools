@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halal Free Tools - PDF Merger, Thumbnail Grabber, Background Remover, Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Bismillah -->
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+    
+    <div class="container">
+        <h1>🛠️ Free Online Tools</h1>
+        <p class="subtitle">Simple, free, and beneficial tools for everyone. InshaAllah.</p>
+        
+        <!-- Tool Navigation -->
+        <div class="tool-nav">
+            <button onclick="showTool('pdf')" class="nav-btn active" id="pdfBtn">📄 PDF Merger</button>
+            <button onclick="showTool('thumbnail')" class="nav-btn" id="thumbBtn">🖼️ YT Thumbnail</button>
+            <button onclick="showTool('bgremove')" class="nav-btn" id="bgBtn">✂️ BG Remover</button>
+            <button onclick="showTool('password')" class="nav-btn" id="passBtn">🔐 Password Gen</button>
+        </div>
+
+        <!-- PDF Merger Tool -->
+        <div id="pdfTool" class="tool active">
+            <h2>📄 Merge PDF Files</h2>
+            <p>Combine multiple PDFs into one file</p>
+            <input type="file" id="pdfFiles" multiple accept=".pdf">
+            <button onclick="mergePDFs()" class="action-btn">Merge PDFs</button>
+            <div id="pdfStatus" class="status"></div>
+            <p class="note">⚠️ Files are processed in your browser. Nothing is uploaded to any server.</p>
+        </div>
+
+        <!-- YouTube Thumbnail Grabber -->
+        <div id="thumbnailTool" class="tool">
+            <h2>🖼️ YouTube Thumbnail Grabber</h2>
+            <p>Get high-quality thumbnail from any YouTube video</p>
+            <input type="text" id="ytUrl" placeholder="Paste YouTube URL here...">
+            <button onclick="getThumbnail()" class="action-btn">Get Thumbnail</button>
+            <div id="thumbnailResult" class="result"></div>
+        </div>
+
+        <!-- Background Remover -->
+        <div id="bgremoveTool" class="tool">
+            <h2>✂️ Background Remover</h2>
+            <p>Remove background from images instantly</p>
+            <input type="file" id="imageFile" accept="image/*">
+            <button onclick="removeBackground()" class="action-btn">Remove Background</button>
+            <div id="bgResult" class="result"></div>
+            <p class="note">⚠️ Uses free API. For personal/educational use.</p>
+        </div>
+
+        <!-- Password Generator -->
+        <div id="passwordTool" class="tool">
+            <h2>🔐 Password Generator</h2>
+            <p>Create strong, secure passwords</p>
+            <div class="options">
+                <label>Length: <input type="number" id="passLength" value="16" min="8" max="50"></label>
+                <label><input type="checkbox" id="includeUpper" checked> Uppercase</label>
+                <label><input type="checkbox" id="includeLower" checked> Lowercase</label>
+                <label><input type="checkbox" id="includeNumbers" checked> Numbers</label>
+                <label><input type="checkbox" id="includeSymbols" checked> Symbols</label>
+            </div>
+            <button onclick="generatePassword()" class="action-btn">Generate Password</button>
+            <div id="passwordResult" class="result"></div>
+        </div>
+
+        <!-- Ko-fi Support Section -->
+        <div class="kofi-section">
+            <p>☕ If these tools benefit you, consider supporting (no obligation)</p>
+            <a href="https://ko-fi.com/YOUR_KOFI_USERNAME" target="_blank">
+                <img src="https://storage.ko-fi.com/cdn/brandasset/kofi_s_tag_white.png" 
+                     alt="Support on Ko-fi" height="40">
+            </a>
+            <p class="dua">جَزَاكَ ٱللَّٰهُ خَيْرًا</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
